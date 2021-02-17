@@ -2,26 +2,26 @@ import React, { Component } from 'react';
 
 class Counter extends Component {
     
-    constructor(){
-        super()
-        this.state = {
-            names: ['erik']
+    constructor(props){
+        super(props);
+
+        this.state={
+            newItem:'',
+            list: []
         }
-    }
-
-    renderName(){
-        this.setState({
-            names: ['Johm', 'erik', 'Hanna']
-        })
-
     }
 
     render() { 
         return (
-            <div>
-                <h1>{this.state.names}</h1>
-                <button onClick={() => this.renderNames()}>Click me</button>
-            </div>
+            <>
+            <h1>Todo List</h1>
+            <br/>
+            <input type="text"
+            placeholder="Enter a todo..."
+            value={this.state.newItem}
+            onChange={e => this.updateInput('newItem', e.target.value)}
+            />
+            </>
           );
     }
 }
