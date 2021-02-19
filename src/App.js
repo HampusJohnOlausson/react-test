@@ -1,11 +1,15 @@
 import './App.css';
+import React from 'react'; 
+import SayHello from './components/SayHello'
+
+
+const counter = 0;
 
 function App() {
   return (
-    <div className="App">
-      <div className="content">
-        <h1>App Component</h1>
-      </div>
+    <div>
+      <SayHello/>
+      
     </div>
   );
 }
