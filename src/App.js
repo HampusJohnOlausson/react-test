@@ -8,17 +8,20 @@ export default class App extends Component {
     tags: ['tag1', 'tag2', 'tag3']
   };
 
-  handleIncrement = () => {
+  handleIncrement = product => {
     
     this.setState({ count: this.state.count + 1})
   };
+
 
   render() {
 
     return (
       <>
         <h1>{this.formatCount()}</h1>
-        <button onClick={this.handleIncrement}>Increment</button>
+        <button 
+          onClick={ () => this.handleIncrement(product)}>
+          Increment</button>
         <ul>
           {this.state.tags.map(tag => ( <li key={tag}>{ tag }</li> ))}
         </ul>
