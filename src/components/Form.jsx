@@ -6,7 +6,7 @@ export default class Form extends Component {
     render() {
         return (
           <div className="Form">
-            <form onSubmit={this.props.onSubmit}>
+            <form onSubmit={(event) => this.props.onSubmit}>
               <input
                 onChange={(event) => this.props.handleChange(event)}
                 value={this.props.input}
