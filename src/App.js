@@ -28,6 +28,12 @@ export default class App extends Component {
     this.setState({ todos: todos, input: '' })
   }
 
+  handleClick = (index) => {
+    const todos = this.state.todos;
+    todos[index].done = !todos[index].done;
+    this.setState({ todos });
+  }
+
   render() {
     return (
       <>
@@ -36,7 +42,8 @@ export default class App extends Component {
         input={this.state.input}
         handleSubmit={this.handleSubmit} />
         <List
-        todos={this.state.todos} />
+        todos={this.state.todos}
+        handleClick={this.handleClick} />
       </>
     );
   }

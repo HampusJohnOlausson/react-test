@@ -10,7 +10,10 @@ export default class List extends Component {
                     return (
                         <Task 
                         key={index}
-                        todo={todo}/>
+                        todo={todo}
+                        index={index}
+                        handleClick={this.props.handleClick}
+                        />
                     )
                 })}
             </div>
