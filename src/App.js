@@ -1,32 +1,21 @@
 import './App.css';
 import React, { Component } from 'react'
-import Greet from './components/Greet';
+import TodoForm from './components/TodoForm';
 
 export default class App extends Component {
 
   state = {
-    loading: true,
-    person: null
+    todos: []
   };
 
-  async componentDidMount() {
-    const url = "https://api.randomuser.me/";
-    const response = await fetch(url);
-    const data = await response.json();
-    this.setState({person: data.results[0], loading: false });
+  addTodo = (todo) => {
+
   }
 
   render() {
     return (
       <>
-        {this.state.loading || !this.state.person ? (
-          <div>loading...</div>
-        ) : (
-          <div>
-            <div>{this.state.person.name.first}</div>
-            <div>{this.state.person.name.last}</div>
-          </div>
-        )}
+       <TodoForm/>
       </>
     );
   }
