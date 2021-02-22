@@ -5,89 +5,32 @@ import Greet from './components/Greet';
 export default class App extends Component {
 
   state = {
-    name: '',
-    email: '',
-    password: '',
-    nameError: '',
-    emailError: '',
-    passwordError: ''
+    loading: true,
+    person: null
   };
 
-  handleChange = event => {
-
-    const isCheckbox = event.target.type === 'checkbox';
-    this.setState({
-      [event.target.name]: isCheckbox
-      ? event.target.checked
-      : event.target.value
-    });
-  }
-
-
-  validate = () => {
-
-    let nameError = '';
-    let emailError = '';
-    let passwordError = '';
-
-    if(!this.state.email.includes('@')){
-      emailError = 'invalid email';
-    }
-
-    if(emailError){
-      this.setState({ emailError });
-      return false;
-    }
-
-    return true;
-  };
-
-  handleSubmit = event => {
-    event.preventDefault();
-    const isValid = this.validate();
-    if(isValid) {
-    console.log(this.state)
-    }
-
-    
+  async componentDidMount() {
+    const url = "https://api.randomuser.me/";
+    const response = await fetch(url);
+    const data = await response.json();
+    this.setState({person: data.results[0], loading: false });
   }
 
   render() {
-
     return (
       <>
-        <form onSubmit={this.handleSubmit}>
+        {this.state.loading || !this.state.person ? (
+          <div>loading...</div>
+        ) : (
           <div>
-            <input name="name"
-            placeholder="name"
-            value={this.state.name}
-            onChange={this.handleChange}/>
-            <div style={{color: 'red'}}>
-              {this.state.nameError}</div>
+            <div>{this.state.person.name.first}</div>
+            <div>{this.state.person.name.last}</div>
           </div>
-          <div>
-          <input name="email"
-            placeholder="email"
-            value={this.state.email}
-            onChange={this.handleChange}/>
-            <div style={{color: 'red'}}>
-              {this.state.emailError}</div>
-          </div>
-          <div>
-          <input type="password"
-            placeholder="password"
-            value={this.state.password}
-            onChange={this.handleChange}/>
-            <div style={{color: 'red'}}>
-              {this.state.passwordError}</div>
-          </div>
-          <div>
-            <button>Submit</button>
-          </div>
-        </form>
-       </>
-      
+        )}
+      </>
     );
   }
 
 }
+
+
