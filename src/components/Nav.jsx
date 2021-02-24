@@ -1,15 +1,24 @@
 import React from 'react'
 import { Route } from 'react-router'
+import About from './About'
+import Shop from './Shop'
 
 const Nav = () => {
     return (
-        <div>
+        <header style={headerStyle}>
             <ul>
-                <li>About</li>
-                <li>Shop</li>
+                <Route path="/About" component={About}/>
+                <Route path="/Shop" component={Shop}/>
             </ul>
-        </div>
+        </header>
     )
 }
 
 export default Nav
+
+const headerStyle = {
+    background: 'grey',
+    height: '10vh',
+    width: '100%',
+    color: 'white',
+}
