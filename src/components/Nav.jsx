@@ -1,17 +1,18 @@
 import React from 'react'
-import { Route } from 'react-router'
+import { Link } from 'react-router-dom'
+
+import App from '../App'
 import About from './About'
 import Shop from './Shop'
 
 const Nav = () => {
     return (
-        <header style={headerStyle}>
-            <ul>
-                <Route path="/About" component={About}/>
-                <Route path="/Shop" component={Shop}/>
-            </ul>
-        </header>
-    )
+      <header style={headerStyle}>
+        <li>
+          <Link to="/about">About</Link>
+        </li>
+      </header>
+    );
 }
 
 export default Nav
