@@ -13,7 +13,6 @@ const Layout = () => {
           <Route path="/" exact component={Main} />
           <Route path="/about" component={About} />
           <Route path="/contact" component={Contact} />
-          <Route path="/contact/:id"/>
         </Switch>
       </BrowserRouter>
     );
