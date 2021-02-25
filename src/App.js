@@ -1,9 +1,10 @@
 
 import React, { Component, lazy, Suspense } from 'react';
+import ErrorBoundary from './components/ErrorBoundary';
 
 //import Layout from './components/Layout';
 
-const Layout = lazy(() => import('./components/Layout'));
+const Layout = lazy(() => import(/*webpackChunkName: "Layout"*/'./components/Layout'));
 
 export default class App extends Component {
   
@@ -11,10 +12,12 @@ export default class App extends Component {
   render() {
     
     return (
-      <Suspense fallback={ <div>Loading...</div>}>
-        <Layout/>
-      </Suspense>
-    )
+      <ErrorBoundary>
+        <Suspense fallback={<div>Loading...</div>}>
+          <Layout />
+        </Suspense>
+      </ErrorBoundary>
+    );
   }
 }
 
