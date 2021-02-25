@@ -5,10 +5,9 @@ import Nav from './Nav'
 const Contact = () => {
     return (
       <div>
-        <Nav />
-        <Main style={mainStyle}>
+        <main style={mainStyle}>
           <h1>Hello</h1>
-        </Main>
+        </main>
       </div>
     );
 }
