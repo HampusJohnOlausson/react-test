@@ -1,16 +1,20 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-
-import App from '../App'
-import About from './About'
-import Shop from './Shop'
+import { Link } from 'react-router-dom';
 
 const Nav = () => {
     return (
       <header style={headerStyle}>
-        <li>
-          <Link to="/about">About</Link>
-        </li>
+        <ul style={listStyle}>
+          <Link to="/">
+            <li>Home</li>
+          </Link>
+          <Link to="/About">
+            <li>About</li>
+          </Link>
+          <Link to="/Contact">
+            <li>Contact</li>
+          </Link>
+        </ul>
       </header>
     );
 }
@@ -18,8 +22,18 @@ const Nav = () => {
 export default Nav
 
 const headerStyle = {
-    background: 'grey',
-    height: '10vh',
-    width: '100%',
-    color: 'white',
-}
+  background: "grey",
+  height: "10vh",
+  width: "100%",
+  color: "white",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: 'center',
+};
+
+const listStyle = {
+  width: '50%',
+  listStyle: "none",
+  display: "flex",
+  justifyContent: "space-around",
+};
