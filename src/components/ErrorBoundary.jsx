@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 export default class ErrorBoundary extends Component {
 
-    constructor(props) {
+    constructor(props){
         super(props)
 
         this.state = {
@@ -10,20 +10,20 @@ export default class ErrorBoundary extends Component {
         }
     }
 
-    static getDerivedStateFromError(error) {
+    static getDerivedStateFromError(error){
         return {
             hasError: true
         }
     }
 
     componentDidCatch(error, info){
-        console.log(error)
-        console.log(info)
+        console.log(error);
+        console.log(info);
     }
 
     render() {
-        if(this.state.error){
-            return <h1>Something went wrong</h1>
+        if(this.state.hasError) {
+            return <h1>Something went wrong...</h1>
         }
         return this.props.children
     }
