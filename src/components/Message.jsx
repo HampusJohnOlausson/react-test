@@ -1,7 +1,8 @@
 import React from 'react'
 
-const Hero = ({heroName}) => {
-    if(heroName === 'Joker'){
+const Message = ({heroName}) => {
+
+    if(heroName === 'joker'){
         throw new Error('not a hero')
     }
     return (
@@ -11,4 +12,4 @@ const Hero = ({heroName}) => {
     )
 }
 
-export default Hero
+export default Message

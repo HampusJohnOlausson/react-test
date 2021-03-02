@@ -1,24 +1,27 @@
 import React from 'react'
-import Portal from './Portal'
+import ErrorBoundary from './ErrorBoundary';
+import Message from './Message';
 
 const About = () => {
     return (
-      <div>
-        <main style={rootStyle}>
-          <h1>About</h1>
-          <Portal/>
-        </main>
-      </div>
+      <>
+        <div style={aboutStyle}>
+          <h1>About Page</h1>
+          <ErrorBoundary>
+            <Message heroName="batman" />
+          </ErrorBoundary>
+        </div>
+      </>
     );
 }
 
 export default About
 
-
-const rootStyle = {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    color: 'black',
-    background: 'yellow',
-}
+const aboutStyle = {
+  height: "90vh",
+  width: "100%",
+  display: "flex",
+  flexDirection: 'column',
+  justifyContent: "center",
+  alignItems: "center",
+};

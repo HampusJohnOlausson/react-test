@@ -3,11 +3,10 @@ import ReactDOM from 'react-dom'
 
 const Portal = () => {
     return ReactDOM.createPortal(
-        <div>
-            <h1>Portal demo</h1>
-        </div>,
-        document.getElementById('portal-root')
-    )
+      <h1 style={{ color: "grey" }}>Portal demo</h1>,
+      document.getElementById("portal-root")
+    );
+    
 }
 
 export default Portal

@@ -1,32 +1,22 @@
 import React from 'react'
-import ErrorBoundary from './ErrorBoundary';
-import Hero from './Hero'
+import Portal from './Portal'
 
 const Contact = () => {
-
     return (
-      <div>
-        <main style={mainStyle}>
-          <ErrorBoundary>
-            <Hero heroName="Superman" />
-          </ErrorBoundary>
-          <ErrorBoundary>
-            <Hero heroName="Batman" />
-          </ErrorBoundary>
-          <ErrorBoundary>
-            <Hero heroName="Joker" />
-          </ErrorBoundary>
-        </main>
-      </div>
-    );
+        <div style={contactStyle}>
+            <h1>Contact page</h1>
+            <Portal/>
+        </div>
+    )
 }
 
 export default Contact
 
-const mainStyle={
-    background: 'yellow',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    height: '90vh',
-}
+const contactStyle = {
+  height: "90vh",
+  width: "100%",
+  display: "flex",
+  flexDirection: 'column',
+  justifyContent: "center",
+  alignItems: "center",
+};

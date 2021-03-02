@@ -1,39 +1,43 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
 
-const Nav = () => {
-    return (
-      <header style={headerStyle}>
-        <ul style={listStyle}>
-          <Link to="/">
-            <li>Home</li>
-          </Link>
-          <Link to="/About">
-            <li>About</li>
-          </Link>
-          <Link to="/Contact">
-            <li>Contact</li>
-          </Link>
-        </ul>
-      </header>
-    );
+export default class Nav extends Component {
+    render() {
+        return (
+          <div>
+            <header style={headerStyle}>
+              <ul style={navStyle}>
+                <Link to="/" style={{ color: "white" }}>
+                  <li>Home</li>
+                </Link>
+                <Link to="/about" style={{ color: "white" }}>
+                  <li>About</li>
+                </Link>
+                <Link to="/contact" style={{ color: "white" }}>
+                  <li>Contact</li>
+                </Link>
+              </ul>
+            </header>
+          </div>
+        );
+    }
 }
 
-export default Nav
-
 const headerStyle = {
-  background: "grey",
-  height: "10vh",
+  backgroundColor: "green",
   width: "100%",
+  height: "10vh",
   color: "white",
   display: "flex",
   alignItems: "center",
-  justifyContent: 'center',
+  justifyContent: "center",
 };
-
-const listStyle = {
-  width: '50%',
+const navStyle = {
   listStyle: "none",
   display: "flex",
+  flexDirection: "row",
   justifyContent: "space-around",
+  alignItems: "center",
+  width: '50%',
+  fontSize: '1.4rem',
 };
