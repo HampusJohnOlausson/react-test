@@ -1,4 +1,5 @@
 import React from 'react'
+import PersonList from './PersonList'
 import Portal from './Portal'
 
 const Contact = () => {
@@ -6,6 +7,7 @@ const Contact = () => {
         <div style={contactStyle}>
             <h1>Contact page</h1>
             <Portal/>
+            <PersonList/>
         </div>
     )
 }
