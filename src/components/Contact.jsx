@@ -1,4 +1,5 @@
 import React from 'react'
+import PersonInput from './PersonInput'
 import PersonList from './PersonList'
 import Portal from './Portal'
 
@@ -7,6 +8,7 @@ const Contact = () => {
         <div style={contactStyle}>
             <h1>Contact page</h1>
             <Portal/>
+            <PersonInput/>
             <PersonList/>
         </div>
     )
