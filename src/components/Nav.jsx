@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import SideBar from './SideBar'
+
 export default class Nav extends Component {
 
   constructor(props){
@@ -23,7 +25,9 @@ export default class Nav extends Component {
                 <i onClick={this.handleClick} style={{cursor: 'pointer'}} className="fas fa-bars"></i>
               </h2>
             </header>
+            <SideBar isOpen={this.state.isSidebarOpen}/>
           </div>
+
         );
     }
 }
