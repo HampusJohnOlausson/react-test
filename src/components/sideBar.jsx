@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const sideBar = () => {
     return (
-      <div>
+      <div style={sideBarStyle}>
         <ul style={navStyle}>
           <Link to="/" style={{ color: "white" }}>
             <li>Home</li>
@@ -21,12 +21,18 @@ const sideBar = () => {
 
 export default sideBar
 
+const sideBarStyle = {
+  width: "100%",
+  minHeight: "100vh",
+  background: "black",
+  color: "white",
+};
+
 const navStyle = {
   listStyle: "none",
   display: "flex",
-  flexDirection: "row",
+  flexDirection: "column",
   justifyContent: "space-around",
   alignItems: "center",
-  width: "50%",
   fontSize: "1.4rem",
 };
