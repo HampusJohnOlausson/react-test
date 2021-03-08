@@ -1,21 +1,17 @@
 import React from 'react'
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
-import About from './About'
-import Contact from './Contact'
-import Main from './Main'
-import Nav from './Nav'
+import Cart from './Cart'
+import { CartProvider } from './CartContext'
+import ItemList from './ItemList'
 
 const Layout = () => {
     return (
-        <BrowserRouter>
-           <Nav/>
-           <Switch>
-               <Route path="/" exact component={Main}/>
-               <Route path="/about" component={About}/>
-               <Route path="/contact" component={Contact} />
-           </Switch>
-        </BrowserRouter>
-    )
+      <CartProvider>
+        <div>
+          <Cart />
+          <ItemList />
+        </div>
+      </CartProvider>
+    );
 }
 
 export default Layout
