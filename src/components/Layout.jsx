@@ -1,16 +1,11 @@
 import React from 'react'
-import Cart from './Cart'
-import { CartProvider } from './CartContext'
-import ItemList from './ItemList'
+import MovieList from './MovieList'
 
 const Layout = () => {
     return (
-      <CartProvider>
-        <div>
-          <Cart />
-          <ItemList />
-        </div>
-      </CartProvider>
+      <div>
+        <MovieList/>
+      </div>
     );
 }
 
