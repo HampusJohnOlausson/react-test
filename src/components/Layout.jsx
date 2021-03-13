@@ -43,11 +43,16 @@ const Layout = () => {
 
     const [currentQuestion, setCurrentQuestion] = useState(0);
 
+    const handleAnswerButtonClick = () => {
+      const nextQuestion = currentQuestion + 1;
+      setCurrentQuestion(nextQuestion);
+    }
+
     return (
       <div>
        <h2>{questions[currentQuestion].questionText}</h2>
        <h3>{questions[0].answerOptions.map(answer => (
-         <button>{answer.answerText}</button>
+         <button onClick={handleAnswerButtonClick}>{answer.answerText}</button>
        ))}</h3>
       </div>
     );
