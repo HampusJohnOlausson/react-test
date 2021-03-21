@@ -1,14 +1,13 @@
-import React from 'react'
+import React, {useState} from 'react'
 import Input from './Input'
-import Todos from './Todos'
+
 
 const Layout = () => {
 
     return (
       <div style={todo}>
         <h2>Todo list</h2>
-        <Input/>
-        <Todos/>
+        <Input />
       </div>
     );
 }

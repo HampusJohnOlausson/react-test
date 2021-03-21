@@ -1,26 +1,55 @@
 import React, {useState} from 'react'
 
-const Input = ({ addTodo }) => {
 
-    const [value, setValue] = useState('');
+const Input = () => {
 
-    const handleChange = (event) => {
-        setValue(...value event.target.value);
-    }
+     const [todos, setTodos] = useState([
+       {
+         text: "go shop",
+       },
+     ]);
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        if(!value) return;
-        addTodo(value);
-        setValue('');
-    }
+  const [value, setValue] = useState("");
 
-    return (
+  const handleClick = (e) => {
+    e.preventDefault();
+    setValue('');
+    addTodo(value)
+  };
+
+  const addTodo = (text) => {
+    const addValue = [...todos, { text } ];
+    setTodos(addValue);
+  }
+
+  const deleteTodo = (index) => {
+    const update = [...todos]
+    update.splice(index, 1);
+    setTodos(update);
+  }
+
+  return (
+    <div>
       <form>
-        <input type="text" value={value} handleChange={handleChange} />
-        <button onSubmit={handleSubmit}>Add</button>
+        <input
+          onChange={(e) => setValue(e.target.value)}
+          value={value}
+          type="text"
+        />
+
+        <button onClick={handleClick}>add</button>
       </form>
-    );
-}
+      <div>
+        <div>
+          {todos.map((todo, index) => (
+            <li key={index}>
+              {todo.text} <button onClick={deleteTodo}>delete</button>
+            </li>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
 
 export default Input
