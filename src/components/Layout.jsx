@@ -1,13 +1,13 @@
-import React, {useState} from 'react'
-import Input from './Input'
-
+import React from 'react'
+import MovieList from './MovieList'
 
 const Layout = () => {
 
+ 
     return (
       <div style={todo}>
-        <h2>Todo list</h2>
-        <Input />
+      <MovieList/>
+        
       </div>
     );
 }
