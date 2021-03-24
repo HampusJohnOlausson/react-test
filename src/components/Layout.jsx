@@ -1,14 +1,19 @@
 import React from 'react'
+import AddMovie from './AddMovie';
+import { MovieProvider } from './MovieContext';
 import MovieList from './MovieList'
+import Nav from './Nav';
 
 const Layout = () => {
 
- 
     return (
-      <div style={todo}>
-      <MovieList/>
-        
-      </div>
+      <MovieProvider>
+        <div style={todo}>
+          <AddMovie/>
+          <Nav/>
+          <MovieList />
+        </div>
+      </MovieProvider>
     );
 }
 
